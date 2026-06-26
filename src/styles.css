@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Fonts are loaded via <link> in src/routes/__root.tsx
+   (Tailwind v4 Lightning CSS cannot resolve remote @import / @font-face URLs). */
+
+
+/* =========================
+   THEME VARIABLES
+========================= */
+
+:root {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-wedding-gold: var(--wedding-gold);
+  --color-wedding-cream: var(--wedding-cream);
+  --color-wedding-champagne: var(--wedding-champagne);
+  --color-wedding-ivory: var(--wedding-ivory);
+  --color-wedding-bronze: var(--wedding-bronze);
+
+  --font-script: var(--font-script);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-caps: var(--font-caps);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  --background: #0a0a0a;
+  --foreground: #f5f0e6;
+
+  /* Ivory & Champagne palette */
+  --wedding-ivory: #f5f0e6;
+  --wedding-cream: #ece2cf;
+  --wedding-champagne: #c9a96e;
+  --wedding-gold: #c9a96e;
+  --wedding-bronze: #7a5a24;
+
+  /* Fonts */
+  --font-script: "Pinyon Script", "Great Vibes", cursive;
+  --font-display: "Italiana", "Cormorant Garamond", serif;
+  --font-body: "Cormorant Garamond", serif;
+  --font-caps: "Tenor Sans", "Cormorant Garamond", serif;
+}
+
+/* =========================
+   BASE
+========================= */
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+/* =========================
+   WEDDING UTILITIES
+========================= */
+
+@layer utilities {
+
+  .wedding-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 8, 4, 0.25) 0%,
+      rgba(10, 8, 4, 0.45) 50%,
+      rgba(10, 8, 4, 0.7) 100%
+    );
+  }
+
+  .clear-slide .wedding-overlay {
+    display: none;
+  }
+
+  /* Script names — soft champagne glow */
+  .wedding-name {
+    font-family: var(--font-script);
+    color: var(--wedding-champagne);
+    text-shadow:
+      0 2px 12px rgba(0, 0, 0, 0.55),
+      0 0 24px rgba(201, 169, 110, 0.25);
+    letter-spacing: 0.5px;
+  }
+
+  /* Editorial display serif (Italiana) — high contrast */
+  .wedding-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+
+  /* Tracked-out small caps — invitation labels */
+  .wedding-caps {
+    font-family: var(--font-caps);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-weight: 300;
+  }
+
+  .wedding-text {
+    font-family: var(--font-body);
+    color: rgba(245, 240, 230, 0.92);
+    font-weight: 400;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+  }
+
+  .wedding-subtext {
+    color: rgba(245, 240, 230, 0.78);
+    font-weight: 400;
+  }
+
+  /* Hairline gold rule */
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--wedding-champagne) 50%,
+      transparent
+    );
+  }
+
+  .gold-border {
+    border: 1px solid rgba(201, 169, 110, 0.4);
+  }
+
+  .gold-glow {
+    text-shadow:
+      0 0 10px rgba(245, 240, 230, 0.45),
+      0 0 22px rgba(201, 169, 110, 0.25);
+  }
+
+  /* Decorative ornament dot */
+  .ornament-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background: var(--wedding-champagne);
+    display: inline-block;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+
+  @keyframes swipe-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+  .swipe-indicator { animation: swipe-bounce 2s ease-in-out infinite; }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .shimmer-text {
+    background: linear-gradient(
+      90deg,
+      var(--wedding-champagne) 0%,
+      #f3e3b8 50%,
+      var(--wedding-champagne) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+}
