@@ -95,7 +95,7 @@ export function SlideRegistry() {
         <div className="flex flex-col items-center">
           <span
             className="wedding-caps"
-            style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
+            style={{ fontSize: "0.7rem", color: "#ffffff", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
           >
             Monday
           </span>
@@ -112,7 +112,7 @@ export function SlideRegistry() {
           </span>
           <span
             className="wedding-caps mt-1"
-            style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
+            style={{ fontSize: "0.7rem", color: "#ffffff", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
           >
             August 2026
           </span>
@@ -129,7 +129,7 @@ export function SlideRegistry() {
         <div className="flex flex-col items-center">
           <span
             className="wedding-caps"
-            style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
+            style={{ fontSize: "0.7rem", color: "#ffffff", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
           >
             At
           </span>
@@ -146,7 +146,7 @@ export function SlideRegistry() {
           </span>
           <span
             className="wedding-caps mt-1"
-            style={{ fontSize: "0.65rem", color: "#f5e6c8", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
+            style={{ fontSize: "0.7rem", color: "#ffffff", letterSpacing: "0.3em", textShadow: "0 2px 6px rgba(0,0,0,0.85)" }}
           >
             Morning
           </span>
